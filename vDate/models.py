@@ -153,7 +153,7 @@ class Relation(models.Model):
 			for gift in gifts:
 				if gift.giftType == 2:
 					total_cost = total_cost + gift.getGift().price
-			girlHappiness = math.log(total_cost - self.girl.maintenanceBudget)
+			girlHappiness = math.log(abs(total_cost - self.girl.maintenanceBudget))
 		elif self.girl.girlType == 2:
 			for gift in gifts:
 				total_cost = total_cost + Decimal(gift.getGift().value)
